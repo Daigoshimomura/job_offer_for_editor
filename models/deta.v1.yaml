@@ -1,0 +1,12 @@
+title: deta
+type: object
+properties:
+  year:
+    type: number
+    description: 年度
+    minimum: 1995
+    maximum: 2016
+  value:
+    type: number
+    description: 値
+x-examples: {}

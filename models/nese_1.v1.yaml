@@ -1,0 +1,7 @@
+title: nese_1
+type: object
+properties:
+  message:
+    type: string
+  result:
+    $ref: ./nest_2.v1.yaml

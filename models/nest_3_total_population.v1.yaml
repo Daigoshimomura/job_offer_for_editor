@@ -1,0 +1,7 @@
+title: nest_3__total_population
+type: object
+properties:
+  label:
+    type: string
+  data:
+    $ref: ./deta.v1.yaml

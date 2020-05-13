@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: job_offer
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /job_offer:
+    get:
+      summary: job_offer
+      tags: []
+      responses: {}
+      operationId: get-job_offer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                result:
+                  title: nest_2_joboffer
+                  type: object
+                  properties:
+                    prefCode:
+                      type: string
+                      description: 県コード
+                    prefName:
+                      type: string
+                      description: 県名
+                    year:
+                      type: string
+                      description: 年度
+                    matter:
+                      type: string
+                      description: 表示内容
+                    class:
+                      type: string
+                      description: 表示分類
+                    data:
+                      type: string
+                      description: 数値
+                  x-examples:
+                    example-1: {}
+    post:
+      summary: result
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: result_joboffer
+                type: object
+                x-tags:
+                  - 求人数の結果
+                properties:
+                  broadName:
+                    type: string
+                    description: 職業大分類1
+                  valid_job_offer_number:
+                    type: number
+                    description: 有効求人数
+                  valid_jobfinder:
+                    type: number
+                    description: 有効就職者
+                  finding_employment_count:
+                    type: number
+                    description: 就職件数
+                x-examples: {}
+      operationId: post-job_offer
+components:
+  schemas: {}

@@ -1,0 +1,18 @@
+title: result_joboffer
+type: object
+x-tags:
+  - 求人数の結果
+properties:
+  broadName:
+    type: string
+    description: 職業大分類1
+  valid_job_offer_number:
+    type: number
+    description: 有効求人数
+  valid_jobfinder:
+    type: number
+    description: 有効就職者
+  finding_employment_count:
+    type: number
+    description: 就職件数
+x-examples: {}

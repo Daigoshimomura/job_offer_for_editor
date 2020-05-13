@@ -1,0 +1,7 @@
+title: nest_2
+type: object
+properties:
+  boundaryYear:
+    type: number
+  data:
+    $ref: ./nest_3.v1.yaml

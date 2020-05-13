@@ -1,0 +1,12 @@
+title: result
+type: object
+properties:
+  total_population:
+    type: number
+    description: 総人口
+  bitrh_number:
+    type: number
+    description: 出生数
+  died_number:
+    type: number
+    description: 死亡数

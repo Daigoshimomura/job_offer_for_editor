@@ -1,0 +1,23 @@
+title: nest_2_joboffer
+type: object
+properties:
+  prefCode:
+    type: string
+    description: 県コード
+  prefName:
+    type: string
+    description: 県名
+  year:
+    type: string
+    description: 年度
+  matter:
+    type: string
+    description: 表示内容
+  class:
+    type: string
+    description: 表示分類
+  data:
+    type: string
+    description: 数値
+x-examples:
+  example-1: {}

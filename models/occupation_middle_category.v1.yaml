@@ -1,0 +1,12 @@
+title: occupation_middle_category
+type: object
+properties:
+  iscoCode:
+    type: string
+    description: 職業大分類コード
+  ismcoCode:
+    type: string
+    description: 職業中分類
+  ismcoName:
+    type: string
+    description: 職業中分類名
