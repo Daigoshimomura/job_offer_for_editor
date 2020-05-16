@@ -8,8 +8,10 @@
  */
 
 package openapi
-// InlineObject struct for InlineObject
+
 type InlineObject struct {
+
 	Message string `json:"message,omitempty"`
+
 	Result Nest2Joboffer `json:"result,omitempty"`
 }

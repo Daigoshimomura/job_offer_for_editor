@@ -11,8 +11,8 @@
     "@openapitools/openapi-generator-cli": "^1.0.13-4.3.1"
   },
   "scripts": {
-    "bandle": "npx swagger-cli bundle ./reference/* -o ./bundled/output.yaml -r ./models/* -t yaml",
-    "generate": "npx openapi-generator  generate -i ./bundled/output.yaml -g go -o ./generated",
+    "bandle": "npx swagger-cli bundle ./reference/job_offer.v1.yaml -o ./bundled/output.yaml -r ./models/* -t yaml",
+    "generate": "npx openapi-generator  generate -i ./bundled/output.yaml -g go-server -o ./generated",
     "build": "npm run bandle && npm run generate"
   }
 }
