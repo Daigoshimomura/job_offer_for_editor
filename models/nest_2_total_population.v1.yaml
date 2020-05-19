@@ -1,7 +1,0 @@
-title: nest_2_total_population
-type: object
-properties:
-  boundaryYear:
-    type: number
-  data:
-    $ref: ./nest_3.v1.yaml

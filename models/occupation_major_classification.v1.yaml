@@ -1,9 +1,0 @@
-title: occupation_major_classification
-type: object
-properties:
-  iscoCode:
-    type: string
-    description: 職業大分類コード
-  iscoName:
-    type: string
-    description: 職業大分類名

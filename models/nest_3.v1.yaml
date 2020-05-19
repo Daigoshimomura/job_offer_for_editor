@@ -1,7 +1,0 @@
-title: nest_3
-type: object
-properties:
-  label:
-    type: string
-  data:
-    $ref: ./deta.v1.yaml
