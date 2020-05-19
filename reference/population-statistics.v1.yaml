@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: job_offer
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /job_offer:
+    get:
+      summary: job_offer
+      tags: []
+      responses: {}
+      operationId: get-job_offer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: |
+                    メッセージ
+                result:
+                  $ref: ../models/result_joboffer.v1.yaml
+            examples: {}
+  /occupation:
+    get:
+      summary: occupation
+      tags: []
+      operationId: get-occupation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: メッセージ
+                result:
+                  $ref: ../models/occupation_middle_category.v1.yaml
+            examples: {}
+        description: ''
+      parameters: []
+  /total_population:
+    get:
+      summary: total_population
+      tags: []
+      responses: {}
+      operationId: get-total_population
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: メッセージ
+                'result ':
+                  $ref: ../models/result_total_population.v1.yaml
+            examples: {}
+components:
+  schemas: {}

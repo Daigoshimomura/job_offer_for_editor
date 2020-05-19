@@ -19,57 +19,86 @@ paths:
               properties:
                 message:
                   type: string
+                  description: |
+                    メッセージ
                 result:
-                  title: nest_2_joboffer
+                  title: result_joboffer
+                  type: object
+                  x-tags:
+                    - 求人数の結果
+                  properties:
+                    broadName:
+                      type: string
+                      description: 職業大分類1
+                    valid_job_offer_number:
+                      type: number
+                      description: 有効求人数
+                    valid_jobfinder:
+                      type: number
+                      description: 有効就職者
+                    finding_employment_count:
+                      type: number
+                      description: 就職件数
+                  x-examples: {}
+            examples: {}
+  /occupation:
+    get:
+      summary: occupation
+      tags: []
+      operationId: get-occupation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: メッセージ
+                result:
+                  title: occupation_middle_category
                   type: object
                   properties:
-                    prefCode:
+                    iscoCode:
                       type: string
-                      description: 県コード
-                    prefName:
+                      description: 職業大分類コード
+                    ismcoCode:
                       type: string
-                      description: 県名
-                    year:
+                      description: 職業中分類
+                    ismcoName:
                       type: string
-                      description: 年度
-                    matter:
-                      type: string
-                      description: 表示内容
-                    class:
-                      type: string
-                      description: 表示分類
-                    data:
-                      type: string
-                      description: 数値
-                  x-examples:
-                    example-1: {}
-    post:
-      summary: result
+                      description: 職業中分類名
+            examples: {}
+        description: ''
+      parameters: []
+  /total_population:
+    get:
+      summary: total_population
       tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                title: result_joboffer
-                type: object
-                x-tags:
-                  - 求人数の結果
-                properties:
-                  broadName:
-                    type: string
-                    description: 職業大分類1
-                  valid_job_offer_number:
-                    type: number
-                    description: 有効求人数
-                  valid_jobfinder:
-                    type: number
-                    description: 有効就職者
-                  finding_employment_count:
-                    type: number
-                    description: 就職件数
-                x-examples: {}
-      operationId: post-job_offer
+      responses: {}
+      operationId: get-total_population
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: メッセージ
+                'result ':
+                  title: result__total_population
+                  type: object
+                  properties:
+                    total_population:
+                      type: number
+                      description: 総人口
+                    bitrh_number:
+                      type: number
+                      description: 出生数
+                    died_number:
+                      type: number
+                      description: 死亡数
+            examples: {}
 components:
   schemas: {}
