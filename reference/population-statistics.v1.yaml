@@ -24,17 +24,6 @@ paths:
                   result:
                     $ref: ../models/result_joboffer.v1.yaml
       operationId: get-job_offer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                request:
-                  $ref: ../models/request_joboffer.v1.yaml
-              required:
-                - request
-            examples: {}
       parameters:
         - schema:
             type: number
