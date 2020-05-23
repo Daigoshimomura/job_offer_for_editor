@@ -9,7 +9,20 @@ paths:
     get:
       summary: job_offer
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: メッセージ
+                  result:
+                    $ref: ../models/result_joboffer.v1.yaml
       operationId: get-job_offer
       requestBody:
         content:
@@ -17,13 +30,12 @@ paths:
             schema:
               type: object
               properties:
-                message:
-                  type: string
-                  description: |
-                    メッセージ
-                result:
-                  $ref: ../models/result_joboffer.v1.yaml
+                request:
+                  $ref: ../models/request_joboffer.v1.yaml
+              required:
+                - request
             examples: {}
+      parameters: []
   /occupation:
     get:
       summary: occupation
@@ -35,19 +47,44 @@ paths:
             schema:
               type: object
               properties:
-                message:
+                iscoCode:
                   type: string
-                  description: メッセージ
-                result:
-                  $ref: ../models/occupation_middle_category.v1.yaml
+                  description: 職業大分類
+              required:
+                - iscoCode
             examples: {}
         description: ''
       parameters: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: メッセージ
+                  result:
+                    $ref: ../models/occupation_middle_category.v1.yaml
   /total_population:
     get:
       summary: total_population
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: メッセージ
+                  result:
+                    $ref: ../models/result_total_population.v1.yaml
       operationId: get-total_population
       requestBody:
         content:
@@ -55,11 +92,8 @@ paths:
             schema:
               type: object
               properties:
-                message:
-                  type: string
-                  description: メッセージ
-                'result ':
-                  $ref: ../models/result_total_population.v1.yaml
+                request:
+                  $ref: ../models/request_total_population.v1.yaml
             examples: {}
 components:
   schemas: {}

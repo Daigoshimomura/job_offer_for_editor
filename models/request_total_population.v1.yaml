@@ -1,0 +1,13 @@
+title: request_total_population
+type: object
+description: ''
+properties:
+  prefCode:
+    type: number
+    description: 県コード
+  cityCode:
+    type: number
+    description: 市区町村コード
+required:
+  - prefCode
+  - cityCode
