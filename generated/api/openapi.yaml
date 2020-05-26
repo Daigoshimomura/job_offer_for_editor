@@ -1,0 +1,235 @@
+openapi: 3.0.0
+info:
+  title: job_offer
+  version: "1.0"
+servers:
+- url: http://localhost:3000
+paths:
+  /job_offer:
+    get:
+      operationId: get-job_offer
+      parameters:
+      - description: 都道府県コード
+        explode: true
+        in: query
+        name: prefCode
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: 年度
+        explode: true
+        in: query
+        name: year
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: 表示内容
+        explode: true
+        in: query
+        name: matter
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: 表示分類
+        explode: true
+        in: query
+        name: class
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: OK
+      summary: job_offer
+      tags: []
+  /occupation:
+    get:
+      operationId: get-occupation
+      parameters:
+      - description: 職業大分類
+        explode: true
+        in: query
+        name: iscoCode
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+          description: OK
+      summary: occupation
+      tags: []
+  /total_population:
+    get:
+      operationId: get-total_population
+      parameters:
+      - description: 都道府県コード
+        explode: true
+        in: query
+        name: prefCode
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: 市区町村コード
+        explode: true
+        in: query
+        name: cityCode
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+          description: OK
+      summary: total_population
+      tags: []
+components:
+  schemas:
+    result_joboffer:
+      example:
+        middleCode: middleCode
+        broadName: broadName
+        middleName: middleName
+        broadCode: broadCode
+        value: 0.8008281904610115
+      properties:
+        broadCode:
+          description: 職業大分類コード
+          type: string
+        broadName:
+          description: 職業大分類名
+          type: string
+        middleCode:
+          description: 職業中分類コード
+          type: string
+        middleName:
+          description: 職業中分類名
+          type: string
+        value:
+          description: 対象の求人・求職者数
+          type: number
+    nest_joboffer:
+      example:
+        prefCode: prefCode
+        otherscount: 1.4658129805029452
+        data:
+          middleCode: middleCode
+          broadName: broadName
+          middleName: middleName
+          broadCode: broadCode
+          value: 0.8008281904610115
+        year: year
+        prefName: prefName
+        allcount: 6.027456183070403
+        matter: matter
+        class: class
+      properties:
+        prefCode:
+          type: string
+        prefName:
+          type: string
+        year:
+          type: string
+        matter:
+          type: string
+        class:
+          type: string
+        data:
+          $ref: '#/components/schemas/result_joboffer'
+        allcount:
+          description: 総合計
+          type: number
+        otherscount:
+          description: その他の分類合計
+          type: number
+    inline_response_200:
+      example:
+        result:
+          prefCode: prefCode
+          otherscount: 1.4658129805029452
+          data:
+            middleCode: middleCode
+            broadName: broadName
+            middleName: middleName
+            broadCode: broadCode
+            value: 0.8008281904610115
+          year: year
+          prefName: prefName
+          allcount: 6.027456183070403
+          matter: matter
+          class: class
+        message: message
+      properties:
+        message:
+          description: メッセージ
+          type: string
+        result:
+          $ref: '#/components/schemas/nest_joboffer'
+    occupation_middle_category:
+      example:
+        ismcoCode: ismcoCode
+        iscoCode: iscoCode
+        ismcoName: ismcoName
+      properties:
+        iscoCode:
+          description: 職業大分類コード
+          type: string
+        ismcoCode:
+          description: 職業中分類
+          type: string
+        ismcoName:
+          description: 職業中分類名
+          type: string
+    inline_response_200_1:
+      example:
+        result:
+          ismcoCode: ismcoCode
+          iscoCode: iscoCode
+          ismcoName: ismcoName
+        message: message
+      properties:
+        message:
+          description: メッセージ
+          type: string
+        result:
+          $ref: '#/components/schemas/occupation_middle_category'
+    result__total_population:
+      example:
+        year: 0.8008281904610115
+        value: 6.027456183070403
+      properties:
+        year:
+          description: 年
+          type: number
+        value:
+          description: 人口(千人)
+          type: number
+    inline_response_200_2:
+      example:
+        result:
+          year: 0.8008281904610115
+          value: 6.027456183070403
+        message: message
+      properties:
+        message:
+          description: メッセージ
+          type: string
+        result:
+          $ref: '#/components/schemas/result__total_population'

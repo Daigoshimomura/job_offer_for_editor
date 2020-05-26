@@ -22,29 +22,29 @@ paths:
                     type: string
                     description: メッセージ
                   result:
-                    $ref: ../models/result_joboffer.v1.yaml
+                    $ref: ../models/nest_joboffer.v1.yaml
       operationId: get-job_offer
       parameters:
         - schema:
-            type: number
+            type: string
           in: query
           name: prefCode
           description: 都道府県コード
           required: true
         - schema:
-            type: number
+            type: string
           in: query
           name: year
           description: 年度
           required: true
         - schema:
-            type: number
+            type: string
           in: query
           name: matter
           description: 表示内容
           required: true
         - schema:
-            type: number
+            type: string
           in: query
           name: class
           description: 表示分類
@@ -94,13 +94,13 @@ paths:
       operationId: get-total_population
       parameters:
         - schema:
-            type: number
+            type: string
           in: query
           required: true
           description: 都道府県コード
           name: prefCode
         - schema:
-            type: number
+            type: string
           in: query
           name: cityCode
           description: 市区町村コード

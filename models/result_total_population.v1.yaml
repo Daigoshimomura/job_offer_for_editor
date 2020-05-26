@@ -1,12 +1,9 @@
 title: result__total_population
 type: object
 properties:
-  total_population:
+  year:
     type: number
-    description: 総人口
-  bitrh_number:
+    description: 年
+  value:
     type: number
-    description: 出生数
-  died_number:
-    type: number
-    description: 死亡数
+    description: 人口(千人)

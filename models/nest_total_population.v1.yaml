@@ -1,0 +1,8 @@
+title: nest_total_population
+type: object
+properties:
+  boundaryYear:
+    type: number
+    description: 実績値と推計値の区切り年
+  data:
+    $ref: ./nest1_total_population.v1.yaml

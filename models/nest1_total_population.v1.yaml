@@ -1,0 +1,8 @@
+title: nest1_total_population
+type: object
+properties:
+  label:
+    type: string
+    description: ラベル + 総人口・転入数・転出数・出生数・死亡数
+  data:
+    $ref: ./result_total_population.v1.yaml

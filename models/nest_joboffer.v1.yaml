@@ -1,0 +1,21 @@
+title: nest_joboffer
+type: object
+properties:
+  prefCode:
+    type: string
+  prefName:
+    type: string
+  year:
+    type: string
+  matter:
+    type: string
+  class:
+    type: string
+  data:
+    $ref: ./result_joboffer.v1.yaml
+  allcount:
+    type: number
+    description: 総合計
+  otherscount:
+    type: number
+    description: その他の分類合計
